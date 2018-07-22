@@ -1,0 +1,18 @@
+<div class="carousel">
+
+  <ul class="slides">
+    <li *ngFor="let photo of photos"
+        [@focusPanel]='photo.state'
+    >
+      <div  class="arrow" (click)="previous(photo)"><img src="../../assets/img/left-arrow.png" ></div>
+      <img  class="slides-image" src="{{photo.url}}" alt="">
+      <div class="arrow arrow-right" (click)="next(photo)"><img (click)="next()"  img src="../../assets/img/right-arrow.png"></div>
+      <h2 class="slides-description"> {{ photo.title}} </h2>
+    </li>
+  </ul>
+
+</div>
+
+
+
+

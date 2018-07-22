@@ -1,0 +1,37 @@
+.carousel {
+  width: 500px;
+  position: relative;
+  &:hover .arrow{
+    visibility: visible;
+  }
+
+  .slides {
+    list-style: none;
+    padding: 0 20px;
+
+    .slides-image {
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+    }
+
+    .slides-description {
+      display: flex;
+    }
+  }
+  .arrow {
+    position: absolute;
+    z-index: 1000;
+    top: 38%;
+    opacity: 0.5;
+    filter: alpha(opacity = 30); /* For IE8 and earlier */
+    visibility: hidden;
+    cursor: pointer;
+
+  }
+  .arrow-right {
+    right: 23px;
+  }
+
+}
+
