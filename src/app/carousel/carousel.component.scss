@@ -1,5 +1,5 @@
 .carousel {
-  width: 500px;
+  width: 100%;
   position: relative;
   &:hover .arrow{
     visibility: visible;
@@ -12,7 +12,9 @@
     .slides-image {
       cursor: pointer;
       width: 100%;
+      height: 400px;
       display: flex;
+      object-fit: cover;
     }
 
     .slides-description {
@@ -35,3 +37,24 @@
 
 }
 
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+   div:nth-child(6) {
+ //   display:none;
+  }
+  div:nth-child(6) {
+   // display:none;
+  }
+
+  .image-item {
+    width: 200px;
+    height: 78px;
+    object-fit: cover;
+    margin: 0 3px;
+   // filter: blur(2px);
+    display: block;
+  }
+}

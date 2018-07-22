@@ -66,5 +66,29 @@ export class CarouselComponent implements OnInit {
     }
     setTimeout(() => this.photos[this.startIndex].state = 'active', 1000);
   }
+  public choose(photo) {
+    this.photos.filter(item => item.id !== photo.id)
+                .map(item => item.state = 'inactive');
+    setTimeout(() => photo.state = 'active', 1000);
+    this.startIndex = photo.id;
+  }
+
+  public nextImage() {
+    this.photos[this.startIndex - 1].state = 'inactive';
+    this.startIndex += 1;
+    if (this.startIndex > this.photos.length) {
+      this.startIndex = 1;
+    }
+    setTimeout(() => this.photos[this.startIndex - 1].state = 'active', 1000);
+  }
+  public previousImage () {
+    this.photos[this.startIndex - 1].state = 'inactive';
+    if (this.startIndex > 1) {
+      this.startIndex -= 1;
+    } else {
+      this.startIndex = this.photos.length;
+    }
+    setTimeout(() => this.photos[this.startIndex - 1].state = 'active', 1000);
+  }
 }
 

@@ -1,18 +1,28 @@
 <div class="carousel">
 
-  <ul class="slides">
-    <li *ngFor="let photo of photos"
+  <div class="slides">
+    <div *ngFor="let photo of photos"
         [@focusPanel]='photo.state'
     >
-      <div  class="arrow" (click)="previous(photo)"><img src="../../assets/img/left-arrow.png" ></div>
-      <img  class="slides-image" src="{{photo.url}}" alt="">
-      <div class="arrow arrow-right" (click)="next(photo)"><img (click)="next()"  img src="../../assets/img/right-arrow.png"></div>
+      <div  class="arrow" (click)="previous()"><img src="../../assets/img/left-white.png" ></div>
+      <img  class="slides-image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-{{photo.id}}.jpg" alt="">
+      <div class="arrow arrow-right" (click)="next()"><img (click)="next()"  img src="../../assets/img/right-white.png"></div>
       <h2 class="slides-description"> {{ photo.title}} </h2>
-    </li>
-  </ul>
+    </div>
+  </div>
 
 </div>
 
+<div class="image-list">
+  <div class="arrow arrow-right" ><img (click)="previousImage()"  img src="../../assets/img/left-black.png"></div>
+  <div *ngFor="let photo of photos">
+    <img (click)="choose(photo)" class="image-item"
+         src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/onepgscr-{{photo.id}}.jpg" alt=""
+         [ngStyle]="{'filter':  photo.id == startIndex ? 'blur(0)' : 'blur(4px)'}"
+    >
+  </div>
+  <div class="arrow arrow-right" ><img (click)="nextImage()"  img src="../../assets/img/right-black.png"></div>
 
+</div>
 
 
