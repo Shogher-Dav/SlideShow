@@ -22,7 +22,6 @@ import {
       state('active', style({
          display: 'visible',
          opacity: '1',
-       //  transform: 'translateX(0)'
       })),
       transition('inactive => active', animate('1000ms ease-in')),
       transition('active => inactive', animate('1000ms ease-out'))
@@ -51,7 +50,6 @@ export class CarouselComponent implements OnInit {
       this.startIndex = 1;
     }
     setTimeout(() => this.photos[this.startIndex - 1].state = 'active', 1000);
-    console.log(this.photos);
   }
   public previous () {
     this.photos[this.startIndex - 1].state = 'inactive';
